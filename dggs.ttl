@@ -16,7 +16,9 @@
   dcterms:created "2020-02-05"^^xsd:date ;
   dcterms:creator "<a href='https://orcid.org/0000-0002-3884-3420'>Simon J D Cox, CSIRO</a>"^^rdf:HTML ;
   dcterms:modified "2020-02-05"^^xsd:date ;
-  rdfs:comment "An ontology to allow DGGS objects to be linked into Loc-I" ;
+  rdfs:comment """An ontology to allow DGGS objects to be linked into Loc-I. 
+  Two classes are defined: a DGGS Geometry is composed of one or more DGGS Cells. 
+  A DGGS Geometry is a kind of geometry that may be the object of the hasGeometry property of a Loc-I Feature. """ ;
   rdfs:label "DGGS Ontology" ;
   rdfs:seeAlso <http://www.opengis.net/doc/AS/dggs/1.0> ;
   rdfs:seeAlso <https://github.com/GeoscienceAustralia/AusPIX_DGGS> ;
@@ -25,7 +27,6 @@
 dggs:Cell
   a owl:Class ;
   rdfs:label "DGGS Cell" ;
-  rdfs:subClassOf <http://www.opengis.net/ont/geosparql#Geometry> ;
 .
 dggs:Geometry
   a owl:Class ;

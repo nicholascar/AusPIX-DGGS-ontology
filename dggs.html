@@ -174,7 +174,7 @@ code {
     ],
     "https://schema.org/description": [
       {
-        "@value": "<p>An ontology to allow DGGS objects to be linked into Loc-I</p>"
+        "@value": "<p>An ontology to allow DGGS objects to be linked into Loc-I. \n  Two classes are defined: a DGGS Geometry is composed of one or more DGGS Cells. \n  A DGGS Geometry is a kind of geometry that may be the object of the hasGeometry property of a Loc-I Feature. </p>"
       }
     ],
     "https://schema.org/name": [
@@ -211,7 +211,9 @@ code {
     </dl>
     <h2>Description</h2>
     <div id="description">
-        <p>An ontology to allow DGGS objects to be linked into Loc-I</p>
+        <p>An ontology to allow DGGS objects to be linked into Loc-I. 
+  Two classes are defined: a DGGS Geometry is composed of one or more DGGS Cells. 
+  A DGGS Geometry is a kind of geometry that may be the object of the hasGeometry property of a Loc-I Feature. </p>
     </div>
 </section>
 <section id="toc">
@@ -242,12 +244,6 @@ code {
                 <th>IRI</th>
                 <td><code>http://linked.data.gov.au/def/dggs#Cell</code></td>
             </tr>
-            <tr>
-                <th>Super-classes</th>
-                <td>
-                    <a href="http://www.opengis.net/ont/geosparql#Geometry">http://www.opengis.net/ont/geosparql#Geometry</a><sup class="sup-c" title="class">c</sup><br/>
-                </td>
-            </tr>
         </table>
     </div>
     <div class="entity class" id="DGGSGeometry">
@@ -272,8 +268,8 @@ code {
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="http://www.w3.org/2000/01/rdf-schema#member">rdfs:member</a> <span class="cardinality">min</span> 1<br/>
                     <a href="http://www.w3.org/2000/01/rdf-schema#member">rdfs:member</a> <span class="cardinality">only</span> <a href="#DGGSCell">dggs:Cell</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.w3.org/2000/01/rdf-schema#member">rdfs:member</a> <span class="cardinality">min</span> 1<br/>
                 </td>
             </tr>
         </table>
