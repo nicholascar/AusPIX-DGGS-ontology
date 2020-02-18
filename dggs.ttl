@@ -26,6 +26,9 @@
 .
 dggs:Cell
   a owl:Class ;
+  rdfs:comment """DGGS cell, for example from <a href='https://github.com/GeoscienceAustralia/AusPIX-DGGS-dataset'>AusPIX</a>
+
+Individual cells should be refered to using an IRI, typically a call to the AusPIX service."""^^rdf:HTML ;
   rdfs:label "DGGS Cell" ;
 .
 dggs:Geometry

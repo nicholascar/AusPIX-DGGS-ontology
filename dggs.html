@@ -244,6 +244,14 @@ code {
                 <th>IRI</th>
                 <td><code>http://linked.data.gov.au/def/dggs#Cell</code></td>
             </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    DGGS cell, for example from <a href='https://github.com/GeoscienceAustralia/AusPIX-DGGS-dataset'>AusPIX</a>
+
+Individual cells should be refered to using an IRI, typically a call to the AusPIX service.
+                </td>
+            </tr>
         </table>
     </div>
     <div class="entity class" id="DGGSGeometry">
@@ -268,8 +276,8 @@ code {
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="http://www.w3.org/2000/01/rdf-schema#member">rdfs:member</a> <span class="cardinality">only</span> <a href="#DGGSCell">dggs:Cell</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.w3.org/2000/01/rdf-schema#member">rdfs:member</a> <span class="cardinality">min</span> 1<br/>
+                    <a href="http://www.w3.org/2000/01/rdf-schema#member">rdfs:member</a> <span class="cardinality">only</span> <a href="#DGGSCell">dggs:Cell</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
