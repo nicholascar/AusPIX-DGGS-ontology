@@ -3,13 +3,16 @@
 # prefix: apo
 
 @prefix apo: <http://linked.data.gov.au/def/auspix#> .
+@prefix data: <http://linked.data.gov.au/def/datatype/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix geox: <http://linked.data.gov.au/def/geox#> .
 @prefix loci: <http://linked.data.gov.au/def/loci#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sdo: <http://schema.org/> .
-@prefix wgs84: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <http://catalogue.linked.data.gov.au/org/csiro>
@@ -35,11 +38,11 @@ An AusPIX Geometry is a kind of geometry that may be the object of the `hasGeome
 .
 apo:Cell
   a owl:Class ;
-  rdfs:comment """AusPIX cell, from <a href='https://github.com/GeoscienceAustralia/AusPIX-DGGS-dataset'>AusPIX</a>
+  rdfs:comment """Cell, from [AusPIX](https://github.com/GeoscienceAustralia/AusPIX-DGGS-dataset)
 
-Individual cells should be refered to using an IRI, typically a call to the AusPIX service."""^^rdf:HTML ;
+Individual cells should be refered to using an IRI, typically a call to the AusPIX service.""" ;
   rdfs:label "DGGS Cell" ;
-  rdfs:subClassOf <http://www.opengis.net/ont/geosparql#SpatialObject> ;
+  rdfs:subClassOf geo:SpatialObject ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
@@ -63,12 +66,12 @@ Individual cells should be refered to using an IRI, typically a call to the AusP
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty <http://linked.data.gov.au/def/geox#hasCentroid> ;
+      owl:onProperty geox:hasCentroid ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:minCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty <http://linked.data.gov.au/def/geox#hasArea> ;
+      owl:onProperty geox:hasArea ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
@@ -78,24 +81,36 @@ Individual cells should be refered to using an IRI, typically a call to the AusP
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:minCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty <http://www.opengis.net/ont/geosparql#hasGeometry> ;
+      owl:onProperty geo:hasGeometry ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:minCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty <http://www.opengis.net/ont/geosparql#sfWithin> ;
+      owl:onProperty geo:sfWithin ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:minCardinality "9"^^xsd:nonNegativeInteger ;
-      owl:onProperty <http://www.opengis.net/ont/geosparql#sfContains> ;
+      owl:onProperty geo:sfContains ;
     ] ;
+  skos:example """auspix:R7852 a apo:Cell ;
+  dcterms:identifier \"R7852\" ;
+  apo:upNeighbour auspix:R7828 ;
+  apo:downNeighbour auspix:R7855 ;
+  apo:rightNeighbour auspix:R8630 ;
+  apo:leftNeighbour auspix:R7851 ;
+  geo:hasGeometry \"POLYGON ((148.88888888888889 -34.663795228918765, 150.0 -34.663795228918765, 150.0 -35.81859718358464, 148.88888888888889 -35.81859718358464))\"^^geo:wktLiteral ;
+  geo:sfContains auspix:R78520 , auspix:R78521 , auspix:R78522 , auspix:R78523 , auspix:R78524 , auspix:R78525 , auspix:R78526 , auspix:R78527 , auspix:R78528 ; 
+  geo:sfWithin auspix:R785 ; 
+  geox:centroid \"POINT (149.44444444444443 -35.23915910922053)\"^^geo:wktLiteral ;
+  geox:hasAreaM2 [ data:value \"12971551595\"^^xsd:decimal ] ; 
+.""" ;
 .
 apo:Geometry
   a owl:Class ;
   rdfs:comment "A DGGS Geometry is composed of a set of DGGS Cells" ;
   rdfs:label "DGGS Geometry" ;
-  rdfs:subClassOf <http://www.opengis.net/ont/geosparql#Geometry> ;
+  rdfs:subClassOf geo:Geometry ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:allValuesFrom apo:Cell ;
@@ -110,22 +125,22 @@ apo:Geometry
 apo:hasNeighbourDown
   a owl:ObjectProperty ;
   rdfs:label "has neighbour downward" ;
-  rdfs:subPropertyOf <http://www.opengis.net/ont/geosparql#sfTouches> ;
+  rdfs:subPropertyOf geo:sfTouches ;
 .
 apo:hasNeighbourLeft
   a owl:ObjectProperty ;
   rdfs:label "has neighbour to the left" ;
-  rdfs:subPropertyOf <http://www.opengis.net/ont/geosparql#sfTouches> ;
+  rdfs:subPropertyOf geo:sfTouches ;
 .
 apo:hasNeighbourRight
   a owl:ObjectProperty ;
   rdfs:label "has neighbour to the right" ;
-  rdfs:subPropertyOf <http://www.opengis.net/ont/geosparql#sfTouches> ;
+  rdfs:subPropertyOf geo:sfTouches ;
 .
 apo:hasNeighbourUp
   a owl:ObjectProperty ;
   rdfs:label "has neighbour upward" ;
-  rdfs:subPropertyOf <http://www.opengis.net/ont/geosparql#sfTouches> ;
+  rdfs:subPropertyOf geo:sfTouches ;
 .
 <https://orcid.org/0000-0002-3884-3420>
   a sdo:Person ;
