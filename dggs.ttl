@@ -92,7 +92,8 @@ Individual cells should be refered to using an IRI, typically a call to the AusP
       owl:minCardinality "9"^^xsd:nonNegativeInteger ;
       owl:onProperty geo:sfContains ;
     ] ;
-  skos:example """auspix:R7852 a apo:Cell ;
+  skos:example """```
+auspix:R7852 a apo:Cell ;
   dcterms:identifier \"R7852\" ;
   apo:upNeighbour auspix:R7828 ;
   apo:downNeighbour auspix:R7855 ;
@@ -103,7 +104,8 @@ Individual cells should be refered to using an IRI, typically a call to the AusP
   geo:sfWithin auspix:R785 ; 
   geox:centroid \"POINT (149.44444444444443 -35.23915910922053)\"^^geo:wktLiteral ;
   geox:hasAreaM2 [ data:value \"12971551595\"^^xsd:decimal ] ; 
-.""" ;
+.
+```""" ;
 .
 apo:Geometry
   a owl:Class ;
