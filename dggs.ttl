@@ -1,44 +1,104 @@
-# baseURI: http://linked.data.gov.au/def/dggs
+# baseURI: http://linked.data.gov.au/def/auspix
 # imports: http://linked.data.gov.au/def/loci
-# prefix: dggs
+# prefix: apo
 
+@prefix apo: <http://linked.data.gov.au/def/auspix#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix dggs: <http://linked.data.gov.au/def/dggs#> .
 @prefix loci: <http://linked.data.gov.au/def/loci#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sdo: <http://schema.org/> .
 @prefix wgs84: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://linked.data.gov.au/def/dggs>
+<http://catalogue.linked.data.gov.au/org/csiro>
+  a sdo:Organization ;
+  sdo:identifier <https://ror.org/03qn8fb07> ;
+  sdo:mainEntityOfPage <https://www.csiro.au/> ;
+  sdo:name "CSIRO" ;
+.
+<http://linked.data.gov.au/def/auspix>
   a owl:Ontology ;
   dcterms:created "2020-02-05"^^xsd:date ;
-  dcterms:creator "<a href='https://orcid.org/0000-0002-3884-3420'>Simon J D Cox, CSIRO</a>"^^rdf:HTML ;
-  dcterms:modified "2020-02-05"^^xsd:date ;
-  rdfs:comment """An ontology to allow DGGS objects to be linked into Loc-I. 
-  Two classes are defined: a DGGS Geometry is composed of one or more DGGS Cells. 
-  A DGGS Geometry is a kind of geometry that may be the object of the hasGeometry property of a Loc-I Feature. """ ;
+  dcterms:creator <https://orcid.org/0000-0002-3884-3420> ;
+  dcterms:modified "2020-05-11"^^xsd:date ;
+  rdfs:comment """An ontology to allow AusPIX objects to be linked into Loc-I. 
+
+Two classes are defined: a `AusPIX Geometry` is composed of one or more `AusPIX Cells`. 
+
+An AusPIX Geometry is a kind of geometry that may be the object of the `hasGeometry` property of a Loc-I Feature. """ ;
   rdfs:label "DGGS Ontology" ;
   rdfs:seeAlso <http://www.opengis.net/doc/AS/dggs/1.0> ;
   rdfs:seeAlso <https://github.com/GeoscienceAustralia/AusPIX_DGGS> ;
   owl:imports <http://linked.data.gov.au/def/loci> ;
 .
-dggs:Cell
+apo:Cell
   a owl:Class ;
-  rdfs:comment """DGGS cell, for example from <a href='https://github.com/GeoscienceAustralia/AusPIX-DGGS-dataset'>AusPIX</a>
+  rdfs:comment """AusPIX cell, from <a href='https://github.com/GeoscienceAustralia/AusPIX-DGGS-dataset'>AusPIX</a>
 
 Individual cells should be refered to using an IRI, typically a call to the AusPIX service."""^^rdf:HTML ;
   rdfs:label "DGGS Cell" ;
+  rdfs:subClassOf <http://www.opengis.net/ont/geosparql#SpatialObject> ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty apo:hasNeighbourDown ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty apo:hasNeighbourLeft ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty apo:hasNeighbourRight ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty apo:hasNeighbourUp ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty <http://linked.data.gov.au/def/geox#hasCentroid> ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty <http://linked.data.gov.au/def/geox#hasArea> ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty dcterms:identifier ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty <http://www.opengis.net/ont/geosparql#hasGeometry> ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty <http://www.opengis.net/ont/geosparql#sfWithin> ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:minCardinality "9"^^xsd:nonNegativeInteger ;
+      owl:onProperty <http://www.opengis.net/ont/geosparql#sfContains> ;
+    ] ;
 .
-dggs:Geometry
+apo:Geometry
   a owl:Class ;
   rdfs:comment "A DGGS Geometry is composed of a set of DGGS Cells" ;
   rdfs:label "DGGS Geometry" ;
   rdfs:subClassOf <http://www.opengis.net/ont/geosparql#Geometry> ;
   rdfs:subClassOf [
       a owl:Restriction ;
-      owl:allValuesFrom dggs:Cell ;
+      owl:allValuesFrom apo:Cell ;
       owl:onProperty rdfs:member ;
     ] ;
   rdfs:subClassOf [
@@ -46,4 +106,33 @@ dggs:Geometry
       owl:minCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onProperty rdfs:member ;
     ] ;
+.
+apo:hasNeighbourDown
+  a owl:ObjectProperty ;
+  rdfs:label "has neighbour downward" ;
+  rdfs:subPropertyOf <http://www.opengis.net/ont/geosparql#sfTouches> ;
+.
+apo:hasNeighbourLeft
+  a owl:ObjectProperty ;
+  rdfs:label "has neighbour to the left" ;
+  rdfs:subPropertyOf <http://www.opengis.net/ont/geosparql#sfTouches> ;
+.
+apo:hasNeighbourRight
+  a owl:ObjectProperty ;
+  rdfs:label "has neighbour to the right" ;
+  rdfs:subPropertyOf <http://www.opengis.net/ont/geosparql#sfTouches> ;
+.
+apo:hasNeighbourUp
+  a owl:ObjectProperty ;
+  rdfs:label "has neighbour upward" ;
+  rdfs:subPropertyOf <http://www.opengis.net/ont/geosparql#sfTouches> ;
+.
+<https://orcid.org/0000-0002-3884-3420>
+  a sdo:Person ;
+  sdo:affiliation <http://catalogue.linked.data.gov.au/org/csiro> ;
+  sdo:email "simon.cox@csiro.au" ;
+  sdo:identifier "https://orcid.org/0000-0002-3884-3420"^^xsd:anyURI ;
+  sdo:mainEntityOfPage <https://people.csiro.au/C/S/simon-cox> ;
+  sdo:name "Simon J D Cox" ;
+  sdo:subjectOf <https://people.csiro.au/C/S/simon-cox> ;
 .
