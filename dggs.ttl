@@ -44,22 +44,22 @@ Individual cells should be refered to using an IRI, typically a call to the AusP
   rdfs:subClassOf geo:SpatialObject ;
   rdfs:subClassOf [
       a owl:Restriction ;
-      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:allValuesFrom apo:Cell ;
       owl:onProperty apo:hasNeighbourDown ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
-      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:allValuesFrom apo:Cell ;
       owl:onProperty apo:hasNeighbourLeft ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
-      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:allValuesFrom apo:Cell ;
       owl:onProperty apo:hasNeighbourRight ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
-      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:allValuesFrom apo:Cell ;
       owl:onProperty apo:hasNeighbourUp ;
     ] ;
   rdfs:subClassOf [
