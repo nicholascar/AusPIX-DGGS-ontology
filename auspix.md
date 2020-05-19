@@ -1,4 +1,4 @@
-# DGGS Ontology
+# AusPIX Ontology
 Markdown documentation created by [pyLODE](http://github.com/rdflib/pyLODE)
 
 
@@ -14,7 +14,7 @@ Markdown documentation created by [pyLODE](http://github.com/rdflib/pyLODE)
 * **Imports**
   * <a href="http://linked.data.gov.au/def/geox">http://linked.data.gov.au/def/geox</a>
 * **Ontology RDF**
-  * <a href="dggs.ttl">RDF (turtle)</a>
+  * <a href="auspix.ttl">RDF (turtle)</a>
 ### Description
 <p>An ontology to allow AusPIX objects to be linked into Loc-I. </p>
 <p>Two classes are defined: a <code>AusPIX Geometry</code> is composed of one or more <code>AusPIX Cells</code>. </p>
@@ -27,25 +27,25 @@ Markdown documentation created by [pyLODE](http://github.com/rdflib/pyLODE)
 
 
 ## Overview
-![](./images/dggs.png)
+![](./images/auspix.png)
 **Figure 1:** Ontology overview  
 ## Classes
-[DGGS Cell](#DGGSCell),
-[DGGS Geometry](#DGGSGeometry),
-### DGGS Cell <sup>c</sup>
+[auspix Cell](#auspixCell),
+[auspix Geometry](#auspixGeometry),
+### AusPIX Cell <sup>c</sup>
 Property | Value
 --- | ---
 IRI | `http://linked.data.gov.au/def/auspix#Cell`
-Description | Cell, from [AusPIX](https://github.com/GeoscienceAustralia/AusPIX-DGGS-dataset)<br/> Individual cells should be refered to using an IRI, typically a call to the AusPIX service.
+Description | Cell, from [AusPIX](https://github.com/GeoscienceAustralia/AusPIX-auspix-dataset)<br/> Individual cells should be refered to using an IRI, typically a call to the AusPIX service.
 Super-classes |<a href="http://www.opengis.net/ont/geosparql#SpatialObject">geo:SpatialObject</a><sup class="sup-c" title="class">c</sup><br />
-Restrictions |<a href="http://www.opengis.net/ont/geosparql#sfWithin">geo:sfWithin</a> <span class="cardinality">min</span> 1<br /><a href="http://linked.data.gov.au/def/geox#hasCentroid">geox:hasCentroid</a> <span class="cardinality">exactly</span> 1<br /><a href="#hasneighbourupward">apo:hasNeighbourUp</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">only</span> <a href="#DGGSCell">apo:Cell</a><sup class="sup-c" title="class">c</sup><br /><a href="http://www.opengis.net/ont/geosparql#hasGeometry">geo:hasGeometry</a> <span class="cardinality">min</span> 1<br /><a href="http://linked.data.gov.au/def/geox#hasArea">geox:hasArea</a> <span class="cardinality">min</span> 1<br /><a href="#hasneighbourtotheleft">apo:hasNeighbourLeft</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">only</span> <a href="#DGGSCell">apo:Cell</a><sup class="sup-c" title="class">c</sup><br /><a href="http://purl.org/dc/terms/identifier">dcterms:identifier</a> <span class="cardinality">min</span> 1<br /><a href="#hasneighbourdownward">apo:hasNeighbourDown</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">only</span> <a href="#DGGSCell">apo:Cell</a><sup class="sup-c" title="class">c</sup><br /><a href="http://www.opengis.net/ont/geosparql#sfContains">geo:sfContains</a> <span class="cardinality">min</span> 9<br /><a href="#hasneighbourtotheright">apo:hasNeighbourRight</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">only</span> <a href="#DGGSCell">apo:Cell</a><sup class="sup-c" title="class">c</sup><br />
-### DGGS Geometry <sup>c</sup>
+Restrictions |<a href="http://www.opengis.net/ont/geosparql#sfWithin">geo:sfWithin</a> <span class="cardinality">min</span> 1<br /><a href="http://linked.data.gov.au/def/geox#hasCentroid">geox:hasCentroid</a> <span class="cardinality">exactly</span> 1<br /><a href="#hasneighbourupward">apo:hasNeighbourUp</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">only</span> <a href="#auspixCell">apo:Cell</a><sup class="sup-c" title="class">c</sup><br /><a href="http://www.opengis.net/ont/geosparql#hasGeometry">geo:hasGeometry</a> <span class="cardinality">min</span> 1<br /><a href="http://linked.data.gov.au/def/geox#hasArea">geox:hasArea</a> <span class="cardinality">min</span> 1<br /><a href="#hasneighbourtotheleft">apo:hasNeighbourLeft</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">only</span> <a href="#auspixCell">apo:Cell</a><sup class="sup-c" title="class">c</sup><br /><a href="http://purl.org/dc/terms/identifier">dcterms:identifier</a> <span class="cardinality">min</span> 1<br /><a href="#hasneighbourdownward">apo:hasNeighbourDown</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">only</span> <a href="#auspixCell">apo:Cell</a><sup class="sup-c" title="class">c</sup><br /><a href="http://www.opengis.net/ont/geosparql#sfContains">geo:sfContains</a> <span class="cardinality">min</span> 9<br /><a href="#hasneighbourtotheright">apo:hasNeighbourRight</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">only</span> <a href="#auspixCell">apo:Cell</a><sup class="sup-c" title="class">c</sup><br />
+### AusPIX Geometry <sup>c</sup>
 Property | Value
 --- | ---
 IRI | `http://linked.data.gov.au/def/auspix#Geometry`
-Description | A DGGS Geometry is composed of a set of DGGS Cells
+Description | A auspix Geometry is composed of a set of auspix Cells
 Super-classes |<a href="http://www.opengis.net/ont/geosparql#Geometry">geo:Geometry</a><sup class="sup-c" title="class">c</sup><br />
-Restrictions |<a href="http://www.w3.org/2000/01/rdf-schema#member">rdfs:member</a> <span class="cardinality">only</span> <a href="#DGGSCell">apo:Cell</a><sup class="sup-c" title="class">c</sup><br /><a href="http://www.w3.org/2000/01/rdf-schema#member">rdfs:member</a> <span class="cardinality">min</span> 1<br />
+Restrictions |<a href="http://www.w3.org/2000/01/rdf-schema#member">rdfs:member</a> <span class="cardinality">only</span> <a href="#auspixCell">apo:Cell</a><sup class="sup-c" title="class">c</sup><br /><a href="http://www.w3.org/2000/01/rdf-schema#member">rdfs:member</a> <span class="cardinality">min</span> 1<br />
 
 ## Object Properties
 [has neighbour downward](hasneighbourdownward),

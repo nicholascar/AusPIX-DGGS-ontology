@@ -1,4 +1,4 @@
-# dggs-ont
-Ontology for use of DGGS in the context of Loc-I. 
+# AusPIX-ont
+Ontology for use of auspix in the context of Loc-I. 
 
-[DGGS Ontology Description](dggs.md)
+[AusPIX Ontology Description](auspix.md)

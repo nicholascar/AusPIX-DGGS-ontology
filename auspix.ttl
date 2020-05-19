@@ -3,6 +3,7 @@
 # prefix: apo
 
 @prefix apo: <http://linked.data.gov.au/def/auspix#> .
+@prefix auspix: <http://pid.geoscience.gov.au/dggs/ausPIX/> .
 @prefix data: <http://linked.data.gov.au/def/datatype/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
@@ -30,7 +31,7 @@
 Two classes are defined: a `AusPIX Geometry` is composed of one or more `AusPIX Cells`. 
 
 An AusPIX Geometry is a kind of geometry that may be the object of the `hasGeometry` property of a Loc-I Feature. """ ;
-  rdfs:label "DGGS Ontology" ;
+  rdfs:label "AusPIX Ontology" ;
   rdfs:seeAlso <http://www.opengis.net/doc/AS/dggs/1.0> ;
   rdfs:seeAlso <https://github.com/GeoscienceAustralia/AusPIX_DGGS> ;
   owl:imports <http://linked.data.gov.au/def/geox> ;
@@ -40,7 +41,7 @@ apo:Cell
   rdfs:comment """Cell, from [AusPIX](https://github.com/GeoscienceAustralia/AusPIX-DGGS-dataset)
 
 Individual cells should be refered to using an IRI, typically a call to the AusPIX service.""" ;
-  rdfs:label "DGGS Cell" ;
+  rdfs:label "AusPIX Cell" ;
   rdfs:subClassOf geo:SpatialObject ;
   rdfs:subClassOf [
       a owl:Restriction ;
@@ -95,13 +96,13 @@ Individual cells should be refered to using an IRI, typically a call to the AusP
   skos:example """```
 auspix:R7852 a apo:Cell ;
   dcterms:identifier \"R7852\" ;
-  apo:upNeighbour auspix:R7828 ;
-  apo:downNeighbour auspix:R7855 ;
-  apo:rightNeighbour auspix:R8630 ;
-  apo:leftNeighbour auspix:R7851 ;
+  apo:upNeighbour apo:R7828 ;
+  apo:downNeighbour apo:R7855 ;
+  apo:rightNeighbour apo:R8630 ;
+  apo:leftNeighbour apo:R7851 ;
   geo:hasGeometry \"POLYGON ((148.88888888888889 -34.663795228918765, 150.0 -34.663795228918765, 150.0 -35.81859718358464, 148.88888888888889 -35.81859718358464))\"^^geo:wktLiteral ;
-  geo:sfContains auspix:R78520 , auspix:R78521 , auspix:R78522 , auspix:R78523 , auspix:R78524 , auspix:R78525 , auspix:R78526 , auspix:R78527 , auspix:R78528 ; 
-  geo:sfWithin auspix:R785 ; 
+  geo:sfContains apo:R78520 , apo:R78521 , apo:R78522 , apo:R78523 , apo:R78524 , apo:R78525 , apo:R78526 , apo:R78527 , apo:R78528 ; 
+  geo:sfWithin apo:R785 ; 
   geox:centroid \"POINT (149.44444444444443 -35.23915910922053)\"^^geo:wktLiteral ;
   geox:hasAreaM2 [ data:value \"12971551595\"^^xsd:decimal ] ; 
 .
@@ -109,8 +110,8 @@ auspix:R7852 a apo:Cell ;
 .
 apo:Geometry
   a owl:Class ;
-  rdfs:comment "A DGGS Geometry is composed of a set of DGGS Cells" ;
-  rdfs:label "DGGS Geometry" ;
+  rdfs:comment "An AusPIX Geometry is composed of a set of auspix Cells" ;
+  rdfs:label "AusPIX Geometry" ;
   rdfs:subClassOf geo:Geometry ;
   rdfs:subClassOf [
       a owl:Restriction ;
@@ -142,6 +143,29 @@ apo:hasNeighbourUp
   a owl:ObjectProperty ;
   rdfs:label "has neighbour upward" ;
   rdfs:subPropertyOf geo:sfTouches ;
+.
+auspix:R7852
+  a apo:Cell ;
+  apo:downNeighbour apo:R7855 ;
+  apo:leftNeighbour apo:R7851 ;
+  apo:rightNeighbour apo:R8630 ;
+  apo:upNeighbour apo:R7828 ;
+  geox:centroid "POINT (149.44444444444443 -35.23915910922053)"^^geo:wktLiteral ;
+  geox:hasAreaM2 [
+      data:value "12971551595"^^xsd:decimal ;
+    ] ;
+  dcterms:identifier "R7852" ;
+  geo:hasGeometry "POLYGON ((148.88888888888889 -34.663795228918765, 150.0 -34.663795228918765, 150.0 -35.81859718358464, 148.88888888888889 -35.81859718358464))"^^geo:wktLiteral ;
+  geo:sfContains apo:R78520 ;
+  geo:sfContains apo:R78521 ;
+  geo:sfContains apo:R78522 ;
+  geo:sfContains apo:R78523 ;
+  geo:sfContains apo:R78524 ;
+  geo:sfContains apo:R78525 ;
+  geo:sfContains apo:R78526 ;
+  geo:sfContains apo:R78527 ;
+  geo:sfContains apo:R78528 ;
+  geo:sfWithin apo:R785 ;
 .
 <https://orcid.org/0000-0002-3884-3420>
   a sdo:Person ;

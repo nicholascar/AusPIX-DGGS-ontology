@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>DGGS Ontology</title>
+    <title>auspix Ontology</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     
     <style>
@@ -168,18 +168,18 @@ code {
     <script type="application/ld+json">
       [
   {
-    "@id": "http://linked.data.gov.au/def/dggs",
+    "@id": "http://linked.data.gov.au/def/auspix",
     "@type": [
       "https://schema.org/DefinedTermSet"
     ],
     "https://schema.org/description": [
       {
-        "@value": "<p>An ontology to allow DGGS objects to be linked into Loc-I. \n  Two classes are defined: a DGGS Geometry is composed of one or more DGGS Cells. \n  A DGGS Geometry is a kind of geometry that may be the object of the hasGeometry property of a Loc-I Feature. </p>"
+        "@value": "<p>An ontology to allow auspix objects to be linked into Loc-I. \n  Two classes are defined: a auspix Geometry is composed of one or more auspix Cells. \n  A auspix Geometry is a kind of geometry that may be the object of the hasGeometry property of a Loc-I Feature. </p>"
       }
     ],
     "https://schema.org/name": [
       {
-        "@value": "DGGS Ontology"
+        "@value": "auspix Ontology"
       }
     ]
   }
@@ -188,12 +188,12 @@ code {
 </head>
 <body>
 <div id="pylode">made by <a href="http://github.com/rdflib/pyLODE">pyLODE</a></div>
-<h1>DGGS Ontology</h1>
+<h1>AusPIX Ontology</h1>
 <section id="metadata">
     <h2 style="display:none;">Metadata</h2>
     <dl>
         <dt>IRI</dt>
-        <dd><code>http://linked.data.gov.au/def/dggs</code></dd>
+        <dd><code>http://linked.data.gov.au/def/auspix</code></dd>
         <dt>Creator(s)</dt>
         <dd>
             <a href='https://orcid.org/0000-0002-3884-3420'>Simon J D Cox, CSIRO</a><br/>
@@ -207,13 +207,13 @@ code {
             <a href="http://linked.data.gov.au/def/loci">http://linked.data.gov.au/def/loci</a><br/>
         </dd>
         <dt>Ontology Source</dt>
-        <dd><a href="dggs.ttl">RDF (turtle)</a></dd>
+        <dd><a href="auspix.ttl">RDF (turtle)</a></dd>
     </dl>
     <h2>Description</h2>
     <div id="description">
-        <p>An ontology to allow DGGS objects to be linked into Loc-I. 
-  Two classes are defined: a DGGS Geometry is composed of one or more DGGS Cells. 
-  A DGGS Geometry is a kind of geometry that may be the object of the hasGeometry property of a Loc-I Feature. </p>
+        <p>An ontology to allow AusPIX objects to be linked into Loc-I. 
+  Two classes are defined: a AusPIX Geometry is composed of one or more AusPIX Cells. 
+  A AusPIX Geometry is a kind of geometry that may be the object of the hasGeometry property of a Loc-I Feature. </p>
     </div>
 </section>
 <section id="toc">
@@ -227,44 +227,44 @@ code {
 <section id="overview">
     <h2>Overview</h2>
     <div class="figure">
-        <div style="width:500px; height:500px; background-color: black;"><img height="500px" src="./images/dggs.png"/></div>
+        <div style="width:500px; height:500px; background-color: black;"><img height="500px" src="./images/auspix.png"/></div>
         <div class="caption"><strong>Figure 1:</strong> Ontology overview</div>
     </div>
 </section>
 <section id="classes">
     <h2>Classes <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
     <ul class="hlist">
-        <li><a href="#DGGSCell">DGGS Cell</a></li>
-        <li><a href="#DGGSGeometry">DGGS Geometry</a></li>
+        <li><a href="#auspixCell">AusPIX Cell</a></li>
+        <li><a href="#auspixGeometry">AusPIX Geometry</a></li>
     </ul>
-    <div class="entity class" id="DGGSCell">
-        <h3>DGGS Cell<sup title="class" class="sup-c">c</sup></h3>
+    <div class="entity class" id="auspixCell">
+        <h3>AusPIX Cell<sup title="class" class="sup-c">c</sup></h3>
         <table>
             <tr>
                 <th>IRI</th>
-                <td><code>http://linked.data.gov.au/def/dggs#Cell</code></td>
+                <td><code>http://linked.data.gov.au/def/auspix#Cell</code></td>
             </tr>
             <tr>
                 <th>Description</th>
                 <td>
-                    DGGS cell, for example from <a href='https://github.com/GeoscienceAustralia/AusPIX-DGGS-dataset'>AusPIX</a>
+                    AusPIX cell, for example from <a href='https://github.com/GeoscienceAustralia/AusPIX-DGGS-dataset'>AusPIX</a>
 
 Individual cells should be refered to using an IRI, typically a call to the AusPIX service.
                 </td>
             </tr>
         </table>
     </div>
-    <div class="entity class" id="DGGSGeometry">
-        <h3>DGGS Geometry<sup title="class" class="sup-c">c</sup></h3>
+    <div class="entity class" id="auspixGeometry">
+        <h3>AusPIX Geometry<sup title="class" class="sup-c">c</sup></h3>
         <table>
             <tr>
                 <th>IRI</th>
-                <td><code>http://linked.data.gov.au/def/dggs#Geometry</code></td>
+                <td><code>http://linked.data.gov.au/def/auspix#Geometry</code></td>
             </tr>
             <tr>
                 <th>Description</th>
                 <td>
-                    A DGGS Geometry is composed of a set of DGGS Cells
+                    A AusPIX Geometry is composed of a set of AusPIX Cells
                 </td>
             </tr>
             <tr>
@@ -277,7 +277,7 @@ Individual cells should be refered to using an IRI, typically a call to the AusP
                 <th>Restrictions</th>
                 <td>
                     <a href="http://www.w3.org/2000/01/rdf-schema#member">rdfs:member</a> <span class="cardinality">min</span> 1<br/>
-                    <a href="http://www.w3.org/2000/01/rdf-schema#member">rdfs:member</a> <span class="cardinality">only</span> <a href="#DGGSCell">dggs:Cell</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.w3.org/2000/01/rdf-schema#member">rdfs:member</a> <span class="cardinality">only</span> <a href="#auspixCell">apo:Cell</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -287,11 +287,11 @@ Individual cells should be refered to using an IRI, typically a call to the AusP
     <h2>Namespaces <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
     <dl>
         <dt><em>default (:)</em></dt>
-        <dd><code>http://linked.data.gov.au/def/dggs#</code></dd>
+        <dd><code>http://linked.data.gov.au/def/auspix#</code></dd>
         <dt>dcterms</dt>
         <dd><code>http://purl.org/dc/terms/</code></dd>
-        <dt>dggs</dt>
-        <dd><code>http://linked.data.gov.au/def/dggs#</code></dd>
+        <dt>apo</dt>
+        <dd><code>http://linked.data.gov.au/def/auspix#</code></dd>
         <dt>loci</dt>
         <dd><code>http://linked.data.gov.au/def/loci#</code></dd>
         <dt>owl</dt>
