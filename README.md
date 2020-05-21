@@ -1,4 +1,4 @@
-# AusPIX-ont
-Ontology for use of auspix in the context of Loc-I. 
+# AusPIX-DGGS-ontology
+Ontology for AusPIX Linked Data API 
 
 [AusPIX Ontology Description](auspix.md)
