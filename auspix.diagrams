@@ -91,13 +91,26 @@
     <cd:nodes>
       <cd:URINode>
         <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >76</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >245</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >31</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >93</cd:x>
+        <cd:class rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+      </cd:URINode>
+    </cd:nodes>
+    <cd:nodes>
+      <cd:URINode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
         >188</cd:height>
         <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
         >302</cd:width>
         <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >81</cd:y>
+        >206</cd:y>
         <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >484</cd:x>
+        >524</cd:x>
         <cd:class rdf:resource="http://linked.data.gov.au/def/auspix#Cell"/>
       </cd:URINode>
     </cd:nodes>
@@ -108,9 +121,9 @@
         <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
         >379</cd:width>
         <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >6</cd:y>
+        >227</cd:y>
         <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >9</cd:x>
+        >18</cd:x>
         <cd:class rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
       </cd:URINode>
     </cd:nodes>
@@ -119,12 +132,12 @@
         <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
         >44</cd:height>
         <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >185</cd:width>
+        >175</cd:width>
         <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >254</cd:y>
+        >92</cd:y>
         <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >184</cd:x>
-        <cd:class rdf:resource="http://linked.data.gov.au/def/auspix#Geometry"/>
+        >504</cd:x>
+        <cd:class rdf:resource="http://linked.data.gov.au/def/auspix#CellAggregate"/>
       </cd:URINode>
     </cd:nodes>
     <cd:selectedResource rdf:resource="http://linked.data.gov.au/def/auspix#Cell"/>
