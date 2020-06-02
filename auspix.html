@@ -1,167 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>auspix Ontology</title>
+    <title>AusPIX Ontology</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     
     <style>
-#pylode {
-    position: fixed;
-    top: 80px;
-    left: -60px;
-    font-size: small;
-    transform: rotate(-90deg);
-    color: grey;
-}
-#pylode a {
-    font-size: 2em;
-    font-weight: bold;
-    text-decoration: none;
-    color: #005A9C;
-}
-#pylode a:hover {
-    color: #333;
-}
+        #pylode {
+            position: fixed;
+            top: 80px;
+            left: -60px;
+            font-size: small;
+            transform: rotate(-90deg);
+            color: grey;
+        }
+        #pylode a {
+            font-size: 2em;
+            font-weight: bold;
+            text-decoration: none;
+            color: #005A9C;
+        }
+        #pylode a:hover {
+            color: #333;
+        }
 
-.cardinality {
-    font-style: italic;
-    color: #aa00aa;
-}
+        .cardinality {
+            font-style: italic;
+            color: #aa00aa;
+        }
 
-dt {
-    font-weight: bold;
-    padding: 5px 0 5px 0;
-}
+        dt {
+            font-weight: bold;
+            padding: 5px 0 5px 0;
+        }
 
-ul.hlist {
-    list-style-type: none;
-    border: 1px solid navy;
-    padding:5px;
-    background-color: #F4FFFF;
-}
+        ul.hlist {
+            list-style-type: none;
+            border: 1px solid navy;
+            padding:5px;
+            background-color: #F4FFFF;
+        }
 
-
-ul.hlist li {
-    display: inline;
-    margin-right: 10px;
-}
-
-.entity {
-    border: 1px solid navy;
-    margin:5px 0 5px 0;
-    padding: 5px;
-}
-
-.entity th {
-    width: 150px;
-    vertical-align: top;
-}
-
-.entity th,
-.entity td {
-    padding-bottom: 20px;
-}
-
-.entity table th {
-    text-align: left;
-}
-
-section#overview img {
-    max-width: 1000px;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    text-align: left
-}
-h1, h2, h3 {
-    color: #005A9C; background: white
-}
-h1 {
-    font: 170% sans-serif;
-    line-height: 110%;
-}
-h2 {
-    font: 140% sans-serif;
-    margin-top:40px;
-}
-h3 {
-    font: 120% sans-serif;
-    margin-top: 3px;
-    padding-bottom: 5px;
-    border-bottom: 1px solid navy;
-}
-h4 { font: bold 100% sans-serif }
-h5 { font: italic 100% sans-serif }
-h6 { font: small-caps 100% sans-serif }
+        ul.hierarchy {
+            border: 1px solid navy;
+            padding: 5px 25px 5px 25px;
+            background-color: #F4FFFF;
+        }
 
 
-body {
-    padding: 2em 70px 2em 70px;
-    margin: 0;
-    font-family: sans-serif;
-    color: black;
-    background: white;
-    background-position: top left;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    text-align: justify;
-}
+        ul.hlist li {
+            display: inline;
+            margin-right: 10px;
+        }
 
-section {
-    max-width: 1500px;
-}
+        .entity {
+            border: 1px solid navy;
+            margin:5px 0 5px 0;
+            padding: 5px;
+        }
 
-.figure {
-    margin-bottom: 20px;
-}
+        .entity th {
+            width: 150px;
+            vertical-align: top;
+        }
 
-:link { color: #00C; background: transparent }
-:visited { color: #609; background: transparent }
-a:active { color: #C00; background: transparent }
+        .entity th,
+        .entity td {
+            padding-bottom: 20px;
+        }
 
-.sup-c,
-.sup-op,
-.sup-fp,
-.sup-dp,
-.sup-ap,
-.sup-p,
-.sup-ni {
-    cursor:help;
-    margin-left: 3px;
-}
+        .entity table th {
+            text-align: left;
+        }
 
-.sup-c {
-    color:orange;
-}
+        section#overview img {
+            max-width: 1000px;
+        }
 
-.sup-op {
-    color:navy;
-}
+        h1, h2, h3, h4, h5, h6 {
+            text-align: left
+        }
+        h1, h2, h3 {
+            color: #005A9C; background: white
+        }
+        h1 {
+            font: 170% sans-serif;
+            line-height: 110%;
+        }
+        h2 {
+            font: 140% sans-serif;
+            margin-top:40px;
+        }
+        h3 {
+            font: 120% sans-serif;
+            margin-top: 3px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid navy;
+        }
+        h4 { font: bold 100% sans-serif }
+        h5 { font: italic 100% sans-serif }
+        h6 { font: small-caps 100% sans-serif }
 
-.sup-fp {
-    color:lightskyblue;
-}
 
-.sup-dp {
-    color:green;
-}
+        body {
+            padding: 2em 70px 2em 70px;
+            margin: 0;
+            font-family: sans-serif;
+            color: black;
+            background: white;
+            background-position: top left;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            text-align: justify;
+        }
 
-.sup-ap {
-    color:darkred;
-}
+        section {
+            max-width: 1500px;
+        }
 
-.sup-p {
-    color:black;
-}
+        .figure {
+            margin-bottom: 20px;
+        }
 
-.sup-ni {
-    color:brown;
-}
+        :link { color: #00C; background: transparent }
+        :visited { color: #609; background: transparent }
+        a:active { color: #C00; background: transparent }
 
-code {
-    font-size: large;
-    color: darkred;
-}
+        .sup-c,
+        .sup-op,
+        .sup-fp,
+        .sup-dp,
+        .sup-ap,
+        .sup-p,
+        .sup-ni,
+        .sup-cp,
+        .sup-cl {
+            cursor:help;
+            margin-left: 3px;
+        }
+
+        .sup-c {
+            color:orange;
+        }
+
+        .sup-op {
+            color:navy;
+        }
+
+        .sup-fp {
+            color:lightskyblue;
+        }
+
+        .sup-dp {
+            color:green;
+        }
+
+        .sup-ap {
+            color:darkred;
+        }
+
+        .sup-p {
+            color:black;
+        }
+
+        .sup-ni {
+            color:brown;
+        }
+
+        .sup-cp {
+            color:orange;
+        }
+
+        .sup-cl {
+            color:darkred;
+        }
+
+        code {
+            font-size: large;
+            color: darkred;
+        }
 
     </style>
     
@@ -174,12 +190,12 @@ code {
     ],
     "https://schema.org/description": [
       {
-        "@value": "<p>An ontology to allow auspix objects to be linked into Loc-I. \n  Two classes are defined: a auspix Geometry is composed of one or more auspix Cells. \n  A auspix Geometry is a kind of geometry that may be the object of the hasGeometry property of a Loc-I Feature. </p>"
+        "@value": "<p>An ontology to allow AusPIX objects to be linked into Loc-I. </p>\n<p>Two classes are defined: a <code>AusPIX CellAggregate</code> is composed of one or more <code>AusPIX Cells</code>. </p>\n<p>An AusPIX CellAggregate may be used to provide a geometrical approximation for other Loc-I Features using the (loci|apo):equivalent predicate. </p>"
       }
     ],
     "https://schema.org/name": [
       {
-        "@value": "auspix Ontology"
+        "@value": "AusPIX Ontology"
       }
     ]
   }
@@ -187,7 +203,7 @@ code {
     </script>
 </head>
 <body>
-<div id="pylode">made by <a href="http://github.com/rdflib/pyLODE">pyLODE</a></div>
+<div id="pylode">made by <a href="http://github.com/rdflib/pyLODE"><span style="color:#329545;">p</span><span style="color:#f9cb33;">y</span>LODE</a></div>
 <h1>AusPIX Ontology</h1>
 <section id="metadata">
     <h2 style="display:none;">Metadata</h2>
@@ -196,30 +212,53 @@ code {
         <dd><code>http://linked.data.gov.au/def/auspix</code></dd>
         <dt>Creator(s)</dt>
         <dd>
-            <a href='https://orcid.org/0000-0002-3884-3420'>Simon J D Cox, CSIRO</a><br/>
+            
+            <a href="https://orcid.org/0000-0002-3884-3420">Simon J D Cox</a>
+            <a href="https://orcid.org/0000-0002-3884-3420"><svg width="15px" height="15px" viewBox="0 0 72 72" version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink">
+            <title>Orcid logo</title>
+            <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g id="hero" transform="translate(-924.000000, -72.000000)" fill-rule="nonzero">
+                    <g id="Group-4">
+                        <g id="vector_iD_icon" transform="translate(924.000000, 72.000000)">
+                            <path d="M72,36 C72,55.884375 55.884375,72 36,72 C16.115625,72 0,55.884375 0,36 C0,16.115625 16.115625,0 36,0 C55.884375,0 72,16.115625 72,36 Z" id="Path" fill="#A6CE39"></path>
+                            <g id="Group" transform="translate(18.868966, 12.910345)" fill="#FFFFFF">
+                                <polygon id="Path" points="5.03734929 39.1250878 0.695429861 39.1250878 0.695429861 9.14431787 5.03734929 9.14431787 5.03734929 22.6930505 5.03734929 39.1250878"></polygon>
+                                <path d="M11.409257,9.14431787 L23.1380784,9.14431787 C34.303014,9.14431787 39.2088191,17.0664074 39.2088191,24.1486995 C39.2088191,31.846843 33.1470485,39.1530811 23.1944669,39.1530811 L11.409257,39.1530811 L11.409257,9.14431787 Z M15.7511765,35.2620194 L22.6587756,35.2620194 C32.49858,35.2620194 34.7541226,27.8438084 34.7541226,24.1486995 C34.7541226,18.1301509 30.8915059,13.0353795 22.4332213,13.0353795 L15.7511765,13.0353795 L15.7511765,35.2620194 Z" id="Shape"></path>
+                                <path d="M5.71401206,2.90182329 C5.71401206,4.441452 4.44526937,5.72914146 2.86638958,5.72914146 C1.28750978,5.72914146 0.0187670918,4.441452 0.0187670918,2.90182329 C0.0187670918,1.33420133 1.28750978,0.0745051096 2.86638958,0.0745051096 C4.44526937,0.0745051096 5.71401206,1.36219458 5.71401206,2.90182329 Z" id="Path"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </svg></a>
+            (<a href="mailto:simon.cox@csiro.au">simon.cox@csiro.au</a>) of 
+            <a href="http://catalogue.linked.data.gov.au/org/csiro">CSIRO</a><br/>
         </dd>
         <dt>Created</dt>
         <dd>2020-02-05</dd>
         <dt>Modified</dt>
-        <dd>2020-02-05</dd>
+        <dd>2020-06-02</dd>
         <dt>Imports</dt>
         <dd>
-            <a href="http://linked.data.gov.au/def/loci">http://linked.data.gov.au/def/loci</a><br/>
+            <a href="http://linked.data.gov.au/def/geox">http://linked.data.gov.au/def/geox</a><br/>
         </dd>
-        <dt>Ontology Source</dt>
+        <dt>Ontology RDF</dt>
         <dd><a href="auspix.ttl">RDF (turtle)</a></dd>
     </dl>
     <h2>Description</h2>
     <div id="description">
-        <p>An ontology to allow AusPIX objects to be linked into Loc-I. 
-  Two classes are defined: a AusPIX Geometry is composed of one or more AusPIX Cells. 
-  A AusPIX Geometry is a kind of geometry that may be the object of the hasGeometry property of a Loc-I Feature. </p>
+        <p>An ontology to allow AusPIX objects to be linked into Loc-I. </p>
+<p>Two classes are defined: a <code>AusPIX CellAggregate</code> is composed of one or more <code>AusPIX Cells</code>. </p>
+<p>An AusPIX CellAggregate may be used to provide a geometrical approximation for other Loc-I Features using the (loci|apo):equivalent predicate. </p>
     </div>
 </section>
 <section id="toc">
     <h2>Table of Contents</h2>
     <ol>
         <li><a href="#classes">Classes</a></li>
+        <li><a href="#objectproperties">Object Properties</a></li>
         <li><a href="#namespaces">Namespaces</a></li>
         <li><a href="#legend">Legend</a></li>
     </ol>
@@ -227,17 +266,17 @@ code {
 <section id="overview">
     <h2>Overview</h2>
     <div class="figure">
-        <div style="width:500px; height:500px; background-color: black;"><img height="500px" src="./images/auspix.png"/></div>
+        <div style="width:500px;text-align:center;"><img src='./images/auspix.png'/></div>
         <div class="caption"><strong>Figure 1:</strong> Ontology overview</div>
     </div>
 </section>
 <section id="classes">
     <h2>Classes <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
     <ul class="hlist">
-        <li><a href="#auspixCell">AusPIX Cell</a></li>
-        <li><a href="#auspixGeometry">AusPIX Geometry</a></li>
+        <li><a href="#AusPIXCell">AusPIX Cell</a></li>
+        <li><a href="#AusPIXCellAggregate">AusPIX CellAggregate</a></li>
     </ul>
-    <div class="entity class" id="auspixCell">
+    <div class="entity class" id="AusPIXCell">
         <h3>AusPIX Cell<sup title="class" class="sup-c">c</sup></h3>
         <table>
             <tr>
@@ -247,61 +286,205 @@ code {
             <tr>
                 <th>Description</th>
                 <td>
-                    AusPIX cell, for example from <a href='https://github.com/GeoscienceAustralia/AusPIX-DGGS-dataset'>AusPIX</a>
-
-Individual cells should be refered to using an IRI, typically a call to the AusPIX service.
+                    <p>Cell, from <a href="https://github.com/GeoscienceAustralia/AusPIX-DGGS-dataset">AusPIX</a></p>
+<p>Individual cells should be refered to using an IRI, typically a call to the AusPIX service.</p>
                 </td>
             </tr>
-        </table>
-    </div>
-    <div class="entity class" id="auspixGeometry">
-        <h3>AusPIX Geometry<sup title="class" class="sup-c">c</sup></h3>
-        <table>
             <tr>
-                <th>IRI</th>
-                <td><code>http://linked.data.gov.au/def/auspix#Geometry</code></td>
-            </tr>
-            <tr>
-                <th>Description</th>
+                <th>Example</th>
                 <td>
-                    A AusPIX Geometry is composed of a set of AusPIX Cells
+                    <pre>
+auspix:R7852 a apo:Cell ;
+  dcterms:identifier 'R7852' ;
+  apo:hasNeighbourUp auspix:R7828 ;
+  apo:hasNeighbourDown auspix:R7855 ;
+  apo:hasNeighbourRight auspix:R8630 ;
+  apo:hasNeighbourLeft auspix:R7851 ;
+  geo:hasGeometry 'POLYGON ((148.88888888888889 -34.663795228918765, 150.0 -34.663795228918765, 150.0 -35.81859718358464, 148.88888888888889 -35.81859718358464))'^^geo:wktLiteral ;
+  geo:sfContains auspix:R78520 , auspix:R78521 , auspix:R78522 , auspix:R78523 , auspix:R78524 , auspix:R78525 , auspix:R78526 , auspix:R78527 , auspix:R78528 ; 
+  geo:sfWithin auspix:R785 ; 
+  geox:hasCentroid 'POINT (149.44444444444443 -35.23915910922053)'^^geo:wktLiteral ;
+  geox:hasAreaM2 [ data:value 12971551595.0 ] ; 
+.
+                    </pre>
                 </td>
             </tr>
             <tr>
                 <th>Super-classes</th>
                 <td>
-                    <a href="http://www.opengis.net/ont/geosparql#Geometry">http://www.opengis.net/ont/geosparql#Geometry</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#Feature">geo:Feature</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>Restrictions</th>
                 <td>
+                    <a href="http://purl.org/dc/terms/identifier">dcterms:identifier</a> <span class="cardinality">min</span> 1<br/>
+                    <a href="http://www.opengis.net/ont/geosparql#sfContains">geo:sfContains</a> <span class="cardinality">min</span> 9<br/>
+                    <a href="#hasneighbourupward">apo:hasNeighbourUp</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">only</span> <a href="#AusPIXCell">apo:Cell</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#hasneighbourtotheright">apo:hasNeighbourRight</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">only</span> <a href="#AusPIXCell">apo:Cell</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#sfWithin">geo:sfWithin</a> <span class="cardinality">min</span> 1<br/>
+                    <a href="#hasneighbourtotheleft">apo:hasNeighbourLeft</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">only</span> <a href="#AusPIXCell">apo:Cell</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#hasneighbourdownward">apo:hasNeighbourDown</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">only</span> <a href="#AusPIXCell">apo:Cell</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://linked.data.gov.au/def/geox#hasArea">geox:hasArea</a> <span class="cardinality">min</span> 1<br/>
+                    <a href="http://www.opengis.net/ont/geosparql#hasGeometry">geo:hasGeometry</a> <span class="cardinality">min</span> 1<br/>
+                    <a href="http://linked.data.gov.au/def/geox#hasCentroid">geox:hasCentroid</a> <span class="cardinality">exactly</span> 1<br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="AusPIXCellAggregate">
+        <h3>AusPIX CellAggregate<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://linked.data.gov.au/def/auspix#CellAggregate</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>An AusPIX CellAggregate is composed of a set of auspix Cells</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Example</th>
+                <td>
+                    <pre>
+auspix:Agg_1
+  rdf:type apo:CellAggregate ;
+  dcterms:identifier 'Agg_1' ;
+  rdfs:member auspix:R7828 ;
+  rdfs:member auspix:R78520 ;
+  rdfs:member auspix:R78521 ;
+  rdfs:member auspix:R78522 ;
+  rdfs:member auspix:R78523 ;
+.
+                    </pre>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/geosparql#Feature">geo:Feature</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="http://www.w3.org/2000/01/rdf-schema#member">rdfs:member</a> <span class="cardinality">only</span> <a href="#AusPIXCell">apo:Cell</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.w3.org/2000/01/rdf-schema#member">rdfs:member</a> <span class="cardinality">min</span> 1<br/>
-                    <a href="http://www.w3.org/2000/01/rdf-schema#member">rdfs:member</a> <span class="cardinality">only</span> <a href="#auspixCell">apo:Cell</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
     </div>
 </section>
+<section id="objectproperties">
+    <h2>Object Properties <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <ul class="hlist">
+        <li><a href="#hasneighbourdownward">has neighbour downward</a></li>
+        <li><a href="#hasneighbourtotheleft">has neighbour to the left</a></li>
+        <li><a href="#hasneighbourtotheright">has neighbour to the right</a></li>
+        <li><a href="#hasneighbourupward">has neighbour upward</a></li>
+    </ul>
+    <div class="entity property" id="hasneighbourdownward">
+        <h3>has neighbour downward<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://linked.data.gov.au/def/auspix#hasNeighbourDown</code></td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/geosparql#sfTouches">geo:sfTouches</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasneighbourtotheleft">
+        <h3>has neighbour to the left<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://linked.data.gov.au/def/auspix#hasNeighbourLeft</code></td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/geosparql#sfTouches">geo:sfTouches</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasneighbourtotheright">
+        <h3>has neighbour to the right<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://linked.data.gov.au/def/auspix#hasNeighbourRight</code></td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/geosparql#sfTouches">geo:sfTouches</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasneighbourupward">
+        <h3>has neighbour upward<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://linked.data.gov.au/def/auspix#hasNeighbourUp</code></td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/geosparql#sfTouches">geo:sfTouches</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+</section>
+
+
+<section id="namedindividuals">
+    <h2>Named Individuals <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <ul class="hlist">
+    </ul>
+</section>
+
 <section id="namespaces">
     <h2>Namespaces <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
     <dl>
         <dt><em>default (:)</em></dt>
         <dd><code>http://linked.data.gov.au/def/auspix#</code></dd>
-        <dt>dcterms</dt>
-        <dd><code>http://purl.org/dc/terms/</code></dd>
         <dt>apo</dt>
         <dd><code>http://linked.data.gov.au/def/auspix#</code></dd>
-        <dt>loci</dt>
-        <dd><code>http://linked.data.gov.au/def/loci#</code></dd>
+        <dt>auspix</dt>
+        <dd><code>http://pid.geoscience.gov.au/dggs/ausPIX/</code></dd>
+        <dt>data</dt>
+        <dd><code>http://linked.data.gov.au/def/datatype/</code></dd>
+        <dt>dcterms</dt>
+        <dd><code>http://purl.org/dc/terms/</code></dd>
+        <dt>geo</dt>
+        <dd><code>http://www.opengis.net/ont/geosparql#</code></dd>
+        <dt>geox</dt>
+        <dd><code>http://linked.data.gov.au/def/geox#</code></dd>
         <dt>owl</dt>
         <dd><code>http://www.w3.org/2002/07/owl#</code></dd>
+        <dt>prov</dt>
+        <dd><code>http://www.w3.org/ns/prov#</code></dd>
         <dt>rdf</dt>
         <dd><code>http://www.w3.org/1999/02/22-rdf-syntax-ns#</code></dd>
         <dt>rdfs</dt>
         <dd><code>http://www.w3.org/2000/01/rdf-schema#</code></dd>
-        <dt>wgs84</dt>
-        <dd><code>http://www.w3.org/2003/01/geo/wgs84_pos#</code></dd>
+        <dt>sdo</dt>
+        <dd><code>http://schema.org/</code></dd>
+        <dt>sdo1</dt>
+        <dd><code>https://schema.org/</code></dd>
+        <dt>skos</dt>
+        <dd><code>http://www.w3.org/2004/02/skos/core#</code></dd>
         <dt>xml</dt>
         <dd><code>http://www.w3.org/XML/1998/namespace</code></dd>
         <dt>xsd</dt>
