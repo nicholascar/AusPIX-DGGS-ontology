@@ -25,12 +25,12 @@
   a owl:Ontology ;
   dcterms:created "2020-02-05"^^xsd:date ;
   dcterms:creator <https://orcid.org/0000-0002-3884-3420> ;
-  dcterms:modified "2020-05-11"^^xsd:date ;
+  dcterms:modified "2020-06-02"^^xsd:date ;
   rdfs:comment """An ontology to allow AusPIX objects to be linked into Loc-I. 
 
-Two classes are defined: a `AusPIX Geometry` is composed of one or more `AusPIX Cells`. 
+Two classes are defined: a `AusPIX CellAggregate` is composed of one or more `AusPIX Cells`. 
 
-An AusPIX Geometry is a kind of geometry that may be the object of the `hasGeometry` property of a Loc-I Feature. """ ;
+An AusPIX CellAggregate may be used to provide a geometrical approximation for other Loc-I Features using the (loci|apo):equivalent predicate. """ ;
   rdfs:label "AusPIX Ontology" ;
   rdfs:seeAlso <http://www.opengis.net/doc/AS/dggs/1.0> ;
   rdfs:seeAlso <https://github.com/GeoscienceAustralia/AusPIX_DGGS> ;
@@ -42,7 +42,7 @@ apo:Cell
 
 Individual cells should be refered to using an IRI, typically a call to the AusPIX service.""" ;
   rdfs:label "AusPIX Cell" ;
-  rdfs:subClassOf geo:SpatialObject ;
+  rdfs:subClassOf geo:Feature ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:allValuesFrom apo:Cell ;
@@ -93,26 +93,25 @@ Individual cells should be refered to using an IRI, typically a call to the AusP
       owl:minCardinality "9"^^xsd:nonNegativeInteger ;
       owl:onProperty geo:sfContains ;
     ] ;
-  skos:example """```
+  skos:example """
 auspix:R7852 a apo:Cell ;
-  dcterms:identifier \"R7852\" ;
-  apo:upNeighbour apo:R7828 ;
-  apo:downNeighbour apo:R7855 ;
-  apo:rightNeighbour apo:R8630 ;
-  apo:leftNeighbour apo:R7851 ;
-  geo:hasGeometry \"POLYGON ((148.88888888888889 -34.663795228918765, 150.0 -34.663795228918765, 150.0 -35.81859718358464, 148.88888888888889 -35.81859718358464))\"^^geo:wktLiteral ;
-  geo:sfContains apo:R78520 , apo:R78521 , apo:R78522 , apo:R78523 , apo:R78524 , apo:R78525 , apo:R78526 , apo:R78527 , apo:R78528 ; 
-  geo:sfWithin apo:R785 ; 
-  geox:centroid \"POINT (149.44444444444443 -35.23915910922053)\"^^geo:wktLiteral ;
-  geox:hasAreaM2 [ data:value \"12971551595\"^^xsd:decimal ] ; 
+  dcterms:identifier 'R7852' ;
+  apo:hasNeighbourUp auspix:R7828 ;
+  apo:hasNeighbourDown auspix:R7855 ;
+  apo:hasNeighbourRight auspix:R8630 ;
+  apo:hasNeighbourLeft auspix:R7851 ;
+  geo:hasGeometry 'POLYGON ((148.88888888888889 -34.663795228918765, 150.0 -34.663795228918765, 150.0 -35.81859718358464, 148.88888888888889 -35.81859718358464))'^^geo:wktLiteral ;
+  geo:sfContains auspix:R78520 , auspix:R78521 , auspix:R78522 , auspix:R78523 , auspix:R78524 , auspix:R78525 , auspix:R78526 , auspix:R78527 , auspix:R78528 ; 
+  geo:sfWithin auspix:R785 ; 
+  geox:hasCentroid 'POINT (149.44444444444443 -35.23915910922053)'^^geo:wktLiteral ;
+  geox:hasAreaM2 [ data:value 12971551595.0 ] ; 
+.""" ;
 .
-```""" ;
-.
-apo:Geometry
+apo:CellAggregate
   a owl:Class ;
-  rdfs:comment "An AusPIX Geometry is composed of a set of auspix Cells" ;
-  rdfs:label "AusPIX Geometry" ;
-  rdfs:subClassOf geo:Geometry ;
+  rdfs:comment "An AusPIX CellAggregate is composed of a set of auspix Cells" ;
+  rdfs:label "AusPIX CellAggregate" ;
+  rdfs:subClassOf geo:Feature ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:allValuesFrom apo:Cell ;
@@ -123,6 +122,16 @@ apo:Geometry
       owl:minCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onProperty rdfs:member ;
     ] ;
+  skos:example """
+auspix:Agg_1
+  rdf:type apo:CellAggregate ;
+  dcterms:identifier 'Agg_1' ;
+  rdfs:member auspix:R7828 ;
+  rdfs:member auspix:R78520 ;
+  rdfs:member auspix:R78521 ;
+  rdfs:member auspix:R78522 ;
+  rdfs:member auspix:R78523 ;
+.""" ;
 .
 apo:hasNeighbourDown
   a owl:ObjectProperty ;
@@ -143,6 +152,15 @@ apo:hasNeighbourUp
   a owl:ObjectProperty ;
   rdfs:label "has neighbour upward" ;
   rdfs:subPropertyOf geo:sfTouches ;
+.
+auspix:Agg_1
+  a apo:CellAggregate ;
+  dcterms:identifier "Agg_1" ;
+  rdfs:member apo:R7828 ;
+  rdfs:member apo:R78520 ;
+  rdfs:member apo:R78521 ;
+  rdfs:member apo:R78522 ;
+  rdfs:member apo:R78523 ;
 .
 auspix:R7852
   a apo:Cell ;
@@ -170,9 +188,7 @@ auspix:R7852
 <https://orcid.org/0000-0002-3884-3420>
   a sdo:Person ;
   sdo:affiliation <http://catalogue.linked.data.gov.au/org/csiro> ;
-  sdo:email "simon.cox@csiro.au" ;
   sdo:identifier "https://orcid.org/0000-0002-3884-3420"^^xsd:anyURI ;
   sdo:mainEntityOfPage <https://people.csiro.au/C/S/simon-cox> ;
   sdo:name "Simon J D Cox" ;
-  sdo:subjectOf <https://people.csiro.au/C/S/simon-cox> ;
 .
