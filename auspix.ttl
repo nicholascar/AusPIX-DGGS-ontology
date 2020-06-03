@@ -30,7 +30,9 @@
 
 Two classes are defined: a `AusPIX CellAggregate` is composed of one or more `AusPIX Cells`. 
 
-An AusPIX CellAggregate may be used to provide a geometrical approximation for other Loc-I Features using the (loci|apo):equivalent predicate. """ ;
+An AusPIX CellAggregate may be used to provide a geometrical approximation for other Loc-I Features using the (loci|apo):equivalent predicate. 
+
+![](./images/auspix.png)""" ;
   rdfs:label "AusPIX Ontology" ;
   rdfs:seeAlso <http://www.opengis.net/doc/AS/dggs/1.0> ;
   rdfs:seeAlso <https://github.com/GeoscienceAustralia/AusPIX_DGGS> ;
