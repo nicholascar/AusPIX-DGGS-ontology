@@ -1,7 +1,7 @@
 # AusPIX-DGGS-ontology
 Ontology for AusPIX Linked Data API 
 
-Built in close collaboration with Simon Cox at CSIRO for the Loc-I project.
+Built by Simon Cox at CSIRO for the Loc-I project.
 
 Date: June 2020
 
