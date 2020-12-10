@@ -25,6 +25,7 @@
   a owl:Ontology ;
   dcterms:created "2020-02-05"^^xsd:date ;
   dcterms:creator <https://orcid.org/0000-0002-3884-3420> ;
+  dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
   dcterms:modified "2020-06-02"^^xsd:date ;
   rdfs:comment """An ontology to allow AusPIX objects to be linked into Loc-I. 
 
@@ -188,9 +189,14 @@ auspix:R7852
   geo:sfWithin apo:R785 ;
 .
 <https://orcid.org/0000-0002-3884-3420>
-  a sdo:Person ;
-  sdo:affiliation <http://catalogue.linked.data.gov.au/org/csiro> ;
-  sdo:identifier "https://orcid.org/0000-0002-3884-3420"^^xsd:anyURI ;
-  sdo:mainEntityOfPage <https://people.csiro.au/C/S/simon-cox> ;
-  sdo:name "Simon J D Cox" ;
+  a owl:NamedIndividual ;
+  a schema:Person ;
+  schema:affiliation [
+      a schema:Organization ;
+      schema:url <http://catalogue.linked.data.gov.au/org/csiro> ;
+      schema:name "CSIRO" ;
+    ] ;
+  schema:email <mailto:simon.cox@csiro.au> ;
+  schema:url <https://orcid.org/0000-0002-3884-3420> ;
+  schema:name "Simon J D Cox"@en ;
 .
