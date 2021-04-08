@@ -1,27 +1,27 @@
-# baseURI: http://linked.data.gov.au/def/auspix
-# imports: http://linked.data.gov.au/def/geox
+# baseURI: https://linked.data.gov.au/def/auspix
+# imports: https://linked.data.gov.au/def/geox
 # prefix: apo
 
-@prefix apo: <http://linked.data.gov.au/def/auspix#> .
+@prefix apo: <https://linked.data.gov.au/def/auspix#> .
 @prefix auspix: <http://pid.geoscience.gov.au/dggs/ausPIX/> .
-@prefix data: <http://linked.data.gov.au/def/datatype/> .
+@prefix data: <https://linked.data.gov.au/def/datatype/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
-@prefix geox: <http://linked.data.gov.au/def/geox#> .
+@prefix geox: <https://linked.data.gov.au/def/geox#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix sdo: <http://schema.org/> .
+@prefix sdo: <https://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://catalogue.linked.data.gov.au/org/csiro>
+<https://linked.data.gov.au/org/csiro>
   a sdo:Organization ;
   sdo:identifier <https://ror.org/03qn8fb07> ;
   sdo:mainEntityOfPage <https://www.csiro.au/> ;
   sdo:name "CSIRO" ;
 .
-<http://linked.data.gov.au/def/auspix>
+<https://linked.data.gov.au/def/auspix>
   a owl:Ontology ;
   dcterms:created "2020-02-05"^^xsd:date ;
   dcterms:creator <https://orcid.org/0000-0002-3884-3420> ;
@@ -37,7 +37,7 @@ An AusPIX CellAggregate may be used to provide a geometrical approximation for o
   rdfs:label "AusPIX Ontology" ;
   rdfs:seeAlso <http://www.opengis.net/doc/AS/dggs/1.0> ;
   rdfs:seeAlso <https://github.com/GeoscienceAustralia/AusPIX_DGGS> ;
-  owl:imports <http://linked.data.gov.au/def/geox> ;
+  owl:imports <https://linked.data.gov.au/def/geox> ;
 .
 apo:Cell
   a owl:Class ;
@@ -190,13 +190,9 @@ auspix:R7852
 .
 <https://orcid.org/0000-0002-3884-3420>
   a owl:NamedIndividual ;
-  a schema:Person ;
-  schema:affiliation [
-      a schema:Organization ;
-      schema:url <http://catalogue.linked.data.gov.au/org/csiro> ;
-      schema:name "CSIRO" ;
-    ] ;
-  schema:email <mailto:simon.cox@csiro.au> ;
-  schema:url <https://orcid.org/0000-0002-3884-3420> ;
-  schema:name "Simon J D Cox"@en ;
+  a sdo:Person ;
+  sdo:affiliation <https://linked.data.gov.au/org/csiro> ;
+  sdo:email "simon.cox@csiro.au"^^xsd:anyURI ;
+  sdo:url "https://orcid.org/0000-0002-3884-3420"^^xsd:anyURI ;
+  sdo:name "Simon J D Cox"@en ;
 .
